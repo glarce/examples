@@ -8,13 +8,13 @@ app.get(5, (res, req) =>
 {
   res.interactivity(
   {
-    2:
+    3:
     {
       type: 'alert',
       title: 'Pause',
       text: 'Continue watching...'
     },
-    3:
+    5:
     {
       type: 'question',
       title: 'Jump',
@@ -28,12 +28,26 @@ app.get(5, (res, req) =>
         text: 'no'
       }]
     },
-    4:
+    7:
     {
       type: 'end'
     }
   })
-  res.send(["videos/spook.webm", "videos/spook.mp4"])
+  res.send(['videos/spook.webm', 'videos/spook.mp4'])
+})
+
+app.get(4, res => {
+  res.animation({
+    1: {
+    attribute: 'position',
+    duration: '3000',
+    from: '-5 0 0',
+    to: '5 360 0',
+    repeat: 'indefinite'
+    }
+  })
+
+  res.send('models/monkey.obj')
 })
 
 app.start()
