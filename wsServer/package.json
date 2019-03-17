@@ -1,0 +1,15 @@
+{
+  "name": "wstest",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "Glarce": "../../Glarce",
+    "cross-env": "^5.2.0"
+  },
+  "scripts": {
+    "build": "cross-env production=true node app",
+    "serve": "node app",
+    "macTest": "rm -rf node_modules/Glarce/ && yarn add ../../Glarce && yarn serve"
+  }
+}
