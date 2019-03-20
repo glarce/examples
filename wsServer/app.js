@@ -3,7 +3,9 @@ const app = new Glarce()
 
 app.set("publicPath", "/")
 app.set("devPublicPath", "/")
-app.set('server', {})
+app.set('server', {
+  secure: true
+})
 
 app.get(5, (res, req) => {
   res.interactivity({
