@@ -8,30 +8,38 @@ app.set('server', {
 })
 
 app.get(5, (res, req) => {
-  res.interactivity({
-    3: {
+  res.type('video')
+
+  res.interactivity(
+  {
+    3:
+    {
       type: 'alert',
       title: 'Pause',
       text: 'Continue watching...'
     },
-    5: {
+    5:
+    {
       type: 'question',
       title: 'Jump',
       text: 'Do you want to jump to 5 seconds',
-      buttons: [{
-          text: 'ok',
-          jumpTo: 5
-        },
-        {
-          text: 'no'
-        }
-      ]
+      buttons: [
+      {
+        text: 'ok',
+        jumpTo: 5
+      },
+      {
+        text: 'no'
+      }]
     },
-    7: {
+    7:
+    {
       type: 'end'
     }
   })
-  res.send(['videos/spook.webm', 'videos/spook.mp4'])
+  res.loadVids(['videos/spook.webm', 'videos/spook.mp4'])
+
+  res.send()
 })
 
 app.start()
